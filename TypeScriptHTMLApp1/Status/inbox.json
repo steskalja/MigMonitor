@@ -1,0 +1,15 @@
+﻿{
+  "Total": 2,
+  "data": [
+    {
+      "nName": "n123456",
+      "fPath": "c:\\temp\\inbox\\n123456.json",
+      "cDate": "01/01/1900"
+    },
+    {
+      "nName": "n987456",
+      "fPath": "c:\\temp\\inbox\\n987456.json",
+      "cDate": "01/02/1900"
+    }
+  ]
+}

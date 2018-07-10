@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" />
+    <title>Office365 Migration Dashboard</title>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+    <script src="SpeedoMeter.js"></script>
+    <script language="javascript" type="text/javascript">
+        var hElements = document.getElementsByTagName("canvas");
+        var cD = new CanvasDraw();
+		function iDraw()
+        {
+		    var width = window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
+		    var cTbl = document.getElementById("ctable");
+		    var cDiv = document.getElementById("tabs");
+		    cTbl = width;
+		    cDiv = width;
+			for(i =0;i<hElements.length;i++ )
+			{
+			    var eWidth = (width * .23);
+			    var eHight = (eWidth / 2);
+			    hElements[i].width = eWidth;
+			    hElements[i].height = eHight;
+				cD.draw(hElements[i].id);
+			}
+			$("#tabs").tabs();
+		}
+    </script>
+    
+</head>
+<body onload="iDraw()" onresize="iDraw()">
+    <div>
+    <table id="ctable"style="margin-left:100px;margin-right:100px">
+        <thead>
+            <tr>
+                <th style="text-align: left">Users to be migrated</th>
+                <th style="text-align: left">Users migrated</th>
+                <th style="text-align: left">User Migration Errors</th>
+            </tr>
+        </thead>
+        <tr>
+            <td width="25%">
+                <canvas id="Inbox" width="360" height="180">Canvas not available.</canvas>
+            </td>
+            <td width="25%">
+                <canvas id="Migrated" width="360" height="180 ">Canvas not available.</canvas>
+            </td>
+            <td width="25%">
+                <canvas id="Errors" width="360" height="180">Canvas not available.</canvas>
+            </td>
+        </tr>
+    </table>
+    <div id="tabs" style="margin-left:100px;margin-right:150px">
+
+        <ul>
+
+            <li><a href="#tabs-Inbox">Inbox</a></li>
+
+            <li><a href="#tabs-Migrated">Migrated</a></li>
+
+            <li><a href="#tabs-Errors">Errors</a></li>
+
+        </ul>
+
+        <div id="tabs-Inbox">
+
+            <table style="width:100%" class="display" id="tbl-Inbox" cellspacing="0">
+                <thead>
+
+                    <tr>
+
+                        <th style="text-align: left">N Name</th>
+
+                        <th style="text-align: left">File</th>
+
+                        <th style="text-align: left">Creation Date</th>
+
+                    </tr>
+
+                </thead>
+                <tfoot>
+
+                    <tr>
+
+                        <th style="text-align: left">N Name</th>
+
+                        <th style="text-align: left">File</th>
+
+                        <th style="text-align: left">Creation Date</th>
+
+                    </tr>
+
+                </tfoot>
+            </table>
+        </div>
+
+        <div id="tabs-Migrated">
+
+            <table style="width:100%" class="display" id="tbl-Migrated" cellspacing="0">
+                <thead>
+
+                    <tr>
+
+                        <th>N Name</th>
+
+                        <th>File</th>
+
+                        <th>Creation Date</th>
+
+                    </tr>
+
+                </thead>
+                <tfoot>
+
+                    <tr>
+
+                        <th>N Name</th>
+
+                        <th>File</th>
+
+                        <th>Creation Date</th>
+
+                    </tr>
+
+                </tfoot>
+            </table>
+
+        </div>
+
+        <div id="tabs-Errors">
+
+            <table style="width:100%" class="display" id="tbl-Errors" cellspacing="0">
+                <thead>
+
+                    <tr>
+
+                        <th>N Name</th>
+
+                        <th>File</th>
+
+                        <th>Creation Date</th>
+
+                    </tr>
+
+                </thead>
+                <tfoot>
+
+                    <tr>
+
+                        <th>N Name</th>
+
+                        <th>File</th>
+
+                        <th>Creation Date</th>
+
+                    </tr>
+
+                </tfoot>
+            </table>
+
+        </div>
+
+    </div>
+    </div>
+
+</body>
+</html>
